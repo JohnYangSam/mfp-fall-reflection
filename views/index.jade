@@ -1,0 +1,34 @@
+extends layout
+
+block head
+  //meta(http-equiv="refresh", content="5")
+
+block content
+  h1#headline MFP Fall E140a in Retrospect
+
+  div.grid
+    each card, i in cards    
+      div(ontouchstart="this.classList.toggle('hover');").flip-container
+        div.flipper
+          div.front(style="background-image: url('#{card.image}');")
+            // Front content
+            div.front-text-container
+              h1 #{card.name}
+              - if (card.day < 21)
+                h2 (Day #{card.day})
+          div.back
+            // Bakc content
+            div.content
+              | #{card.content}
+            - if (card.attribution !== "")
+              div.attribution
+                | ~ #{card.attribution}
+
+  div.footer
+    | Created by
+    |  
+    a(href='https://twitter.com/johnys') John Yang-Sammataro
+    | 
+    | for MFP E140a Spring 2014
+
+  // GIFs and non Stanford images from http://giphy.com/ and linked to source unless otherwise noted.

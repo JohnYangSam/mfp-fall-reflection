@@ -1,0 +1,178 @@
+body {
+  padding: 50px;
+  font: 14px Helvetica, Arial, sans-serif;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+}
+
+a {
+  color: #00B7FF;
+}
+
+.italic {
+  font-style: italic;
+}
+
+#headline {
+  font-size: 30pt;
+}
+
+.grid {
+  margin-bottom: 100px;
+  overflow: auto; /* So that the height encompasses the children */
+}
+
+.footer {
+  text-align: right;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ccc;
+}
+
+/* Flipper styling */
+.flip-container {
+  margin: 10px;
+  float: left;
+}
+
+
+.front, .back {
+  padding: 10px;
+  text-align: center;
+}
+
+.front {
+  background-color: #333;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 250px 250px;
+}
+
+.front h1 {
+  font-size: 18pt;
+
+  opacity: 1.0;
+}
+
+.front-text-container {
+  padding: 5px; 
+  background-color:rgba(204,204,204, 0.5)  
+}
+
+.front h2 {
+  opacity: 1.0;
+
+}
+
+.back {
+  background-color:rgba(204,204,204, 0.5)  
+}
+
+.back .content {
+  font-size: 14pt;
+  text-align: left;
+}
+
+.back .attribution {
+  margin-top: 10px;
+
+  text-align: right;
+  font-style: italic;
+
+}
+
+/* Flipper css. Reference: http://davidwalsh.name/css-flip */
+
+/* The container keeps the perspective */
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-persective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+
+  -moz-transform: perspective(1000px);
+  -ms-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotateY(180deg);
+}
+
+/* Flip piece size */
+.flip-container, .front, .back {
+  box-sizing:border-box;
+  width: 250px;
+  height: 250px;
+}
+
+/* Flip speed */
+.flipper {
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* Hide the back when swapping */
+.front, .back { 
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
+  -moz-transition: 0.6s;
+  -ms-transition: 0.6s;
+
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above the pack pane to start */
+.front {
+
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+
+  z-index: 2;
+}
+
+/* Hide the back pane initially */
+.back {
+
+  transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+
+  -webkit-transition: 0.6s;
+  -moz-transform: 0.6s;
+  -ms-transform: 0.6s;
+
+}
