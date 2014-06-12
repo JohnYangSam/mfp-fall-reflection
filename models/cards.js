@@ -191,7 +191,7 @@ exports.contents = [
     "name" : "Then BRING ON THE SUMMER!",
     "day": 22,
     "image": "http://media1.giphy.com/media/EffgxxGq6jTUc/200.gif",
-    "content": "Thank you for the anwesome quarter. Looking forward to another awesome one this summer!",
+    "content": "Thank you for an learning packed quarter. Looking forward to another awesome one this summer!",
     "attribution": "John Yang-Sammataro"
   },
 
